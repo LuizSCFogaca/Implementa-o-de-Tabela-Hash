@@ -6,12 +6,13 @@ using namespace std;
 
 class Sensor{
     private:
-        int id;
+        int id = -1;
         string tipo;
         string localizacao;
         float ultimaLeitura;
     public:
         //Construtor
+        Sensor() = default;
         Sensor(int id, string tipo, string localizacao, float ultimaLeitura);
 
         //Get
@@ -26,6 +27,8 @@ class Sensor{
         void set_localizacao(string localizacao);
         void set_ultimaLeitura(float ultimaLeitura);
 
+        //exibir
+        void exibir();
 };
 
 #endif
