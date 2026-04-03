@@ -35,3 +35,11 @@ void Sensor::set_localizacao(string localizacao){
 void Sensor::set_ultimaLeitura(float ultimaLeitura){
     this->ultimaLeitura = ultimaLeitura;
 }
+
+void Sensor::exibir(){
+
+    cout<<"========\n id: " << get_id()<<endl;
+    cout<<"tipo: " << get_tipo() <<endl;
+    cout<<"localização: " << get_localizacao()<<endl;
+    cout<<"última leitura: " << get_ultimaLeitura()<<"\n========"<<endl;
+}
