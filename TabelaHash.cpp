@@ -2,6 +2,16 @@
 #include <ctime>
 #include "tabelaHash.h"
 
+TabelaHash::TabelaHash(){
+    for(int i= 0; i < 1000; i++){
+        tabelaHash[i].set_id(-1);
+    }
+}
+
+int TabelaHash::get_contCol(){
+    return contCol;
+}
+
 void TabelaHash::insert(Sensor sensor){//insert na tabela utilizando o calculo de sondagem dupla
     int i = 0;
     while(i < 1000){
@@ -10,10 +20,13 @@ void TabelaHash::insert(Sensor sensor){//insert na tabela utilizando o calculo d
         int h2 = 1+(sensor.get_id() % (M -1));
         int pos = (h1 + i*h2) % M;
 
-        if(tabelaHash[pos].get_id() == -1)
+        if(tabelaHash[pos].get_id() == -1){
             tabelaHash[pos] = sensor;
-        else
+            return;
+        }else{
             i++;
+            contCol++;
+        }
     }
 }
 
@@ -26,10 +39,11 @@ void TabelaHash::search(int id){
 
         if(tabelaHash[pos].get_id() == id){
             tabelaHash[pos].exibir();
+            cout<<"pos:"<< pos <<endl;
             return;
         }
     }
-    cout<<"Não há nenhum sensor com esse id"<<endl;
+    cout<<"Não há nenhum sensor com o id: "<<id<<endl;
 }
 
 void TabelaHash::deletar(int id){

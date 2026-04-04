@@ -5,6 +5,7 @@
 using namespace std;
 class TabelaHash{ //Estático com 1000 pags - fechado utiliza cálculo duplo
     private:
+        int contCol = 0;
         Sensor tabelaHash[1000];
     public:
         TabelaHash();
@@ -13,6 +14,7 @@ class TabelaHash{ //Estático com 1000 pags - fechado utiliza cálculo duplo
         void deletar(int id);
         void atualizarInfo(int id);
         void exibirTabelaHash();
+        int get_contCol();
 };
 
 

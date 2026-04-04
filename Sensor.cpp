@@ -41,5 +41,5 @@ void Sensor::exibir(){
     cout<<"========\n id: " << get_id()<<endl;
     cout<<"tipo: " << get_tipo() <<endl;
     cout<<"localização: " << get_localizacao()<<endl;
-    cout<<"última leitura: " << get_ultimaLeitura()<<"\n========"<<endl;
+    cout<<"última leitura: " << get_ultimaLeitura()<<endl<<endl;
 }
