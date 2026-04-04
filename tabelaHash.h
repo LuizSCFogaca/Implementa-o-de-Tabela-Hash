@@ -15,6 +15,7 @@ class TabelaHash{ //Estático com 1000 pags - fechado utiliza cálculo duplo
         void atualizarInfo(int id);
         void exibirTabelaHash();
         int get_contCol();
+        bool existeId(int id);
 };
 
 

@@ -30,6 +30,15 @@ void TabelaHash::insert(Sensor sensor){//insert na tabela utilizando o calculo d
     }
 }
 
+bool TabelaHash::existeId(int id){
+    for(int i = 0; i < 1000; i++){
+        if(tabelaHash[i].get_id() == id){
+            return true;
+        }
+    }
+    return false;
+}
+
 void TabelaHash::search(int id){
     for(int i = 0; i<1000; i++){
         int M = 1000;
@@ -39,11 +48,11 @@ void TabelaHash::search(int id){
 
         if(tabelaHash[pos].get_id() == id){
             tabelaHash[pos].exibir();
-            cout<<"pos:"<< pos <<endl;
+            cout<<"pos:"<< pos;
             return;
         }
     }
-    cout<<"Não há nenhum sensor com o id: "<<id<<endl;
+    cout<<"Não há nenhum sensor com o id: "<<id;
 }
 
 void TabelaHash::deletar(int id){
