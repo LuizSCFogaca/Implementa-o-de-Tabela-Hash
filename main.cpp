@@ -85,9 +85,10 @@ int main(){
             }
             case 6:{
                 int idAtu;
-                cout<<"Digite o id do sensor que deseja atualizar: ";
-                cin>>idAtu;
-                tabelaHash.atualizarInfo(idAtu);
+                float atualizacao;
+                cout<<"Digite o id do sensor que deseja atualizar e o valor medido(float): ";
+                cin>>idAtu>>atualizacao;
+                tabelaHash.atualizarInfo(idAtu, atualizacao);
                 break;
             }
             default:{
