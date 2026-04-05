@@ -4,7 +4,7 @@
 using namespace std;
 
 TabelaHash::TabelaHash(){
-    for(int i= 0; i < 10000; i++){
+    for(int i= 0; i < 10007; i++){
         tabelaHash[i].set_id(-1);
     }
 }
@@ -15,8 +15,8 @@ int TabelaHash::get_contCol(){
 
 void TabelaHash::insert(Sensor sensor){//insert na tabela utilizando o calculo de sondagem dupla
     int i = 0;
-    while(i<10000){
-        int M = 10000;
+    while(i<10007){
+        int M = 10007;
         int h1 = sensor.get_id() % M;
         int h2 = 1+(sensor.get_id() % (M -1));
         int pos = (h1 + i*h2) % M;
@@ -33,8 +33,8 @@ void TabelaHash::insert(Sensor sensor){//insert na tabela utilizando o calculo d
 
 bool TabelaHash::existeId(int id){
     int i = 0;
-    while(i < 10000){
-        int M = 10000;
+    while(i < 10007){
+        int M = 10007;
         int h1 = id % M;
         int h2 = 1+(id % (M -1));
         int pos = (h1 + i*h2) % M;
@@ -51,8 +51,8 @@ bool TabelaHash::existeId(int id){
 
 void TabelaHash::search(int id){
     int i = 0;
-    while(i< 10000){
-        int M = 10000;
+    while(i< 10007){
+        int M = 10007;
         int h1 = id % M;
         int h2 = 1+ (id % (M -1));
         int pos = (h1 + i*h2) % M;
@@ -74,8 +74,8 @@ void TabelaHash::search(int id){
 
 void TabelaHash::deletar(int id){
     int i =0;
-    while(i< 10000){
-        int M = 10000;
+    while(i< 10007){
+        int M = 10007;
         int h1 = id % M;
         int h2 = 1+ (id % (M -1));
         int pos = (h1 + i*h2) % M;
@@ -97,8 +97,8 @@ void TabelaHash::deletar(int id){
 
 void TabelaHash::atualizarInfo(int id, float leitura){
     int i = 0;
-    while(i<10000){
-        int M = 10000;
+    while(i<10007){
+        int M = 10007;
         int h1 = id % M;
         int h2 = 1+ (id % (M -1));
         int pos = (h1 + i*h2) % M;
@@ -119,7 +119,7 @@ void TabelaHash::atualizarInfo(int id, float leitura){
 }
 
 void TabelaHash::exibirTabelaHash(){
-    for(int i = 0; i< 10000; i++){
+    for(int i = 0; i< 10007; i++){
         if(tabelaHash[i].get_id() != -1 && tabelaHash[i].get_id() != -11){
             cout <<"Sensor["<<i<<"]: "<< " id: "<<tabelaHash[i].get_id() <<" tipo: " << tabelaHash[i].get_tipo()<<
             " localização: "<<tabelaHash[i].get_localizacao()<< " última leitura: " << tabelaHash[i].get_ultimaLeitura()<< endl;

@@ -6,7 +6,7 @@ using namespace std;
 class TabelaHash{ //Estático com 1000 pags - fechado utiliza cálculo duplo
     private:
         int contCol = 0;
-        Sensor tabelaHash[10000];
+        Sensor tabelaHash[10007];
     public:
         TabelaHash();
         void insert(Sensor sensor);
