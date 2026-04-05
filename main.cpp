@@ -6,7 +6,7 @@
 #include "sensor.h"
 using namespace std;
 
-void inserir1000(TabelaHash& tabelaHash){
+void inserir1000(TabelaHash& tabelaHash){//gerador automático de 1000 inserções
     random_device rd; 
     mt19937 gen(rd()); 
     uniform_int_distribution<> distr(1, 100000);
@@ -36,6 +36,7 @@ int main(){
 
     while(rodar){
         int operacao;
+        //Menu
         cout<<"1.Inserir 1000 elementos automaticamente na Tabela\n"
         "2.Exibir elementos da tabela\n"
         "3.Deletar algum elemento pelo id\n"
@@ -47,22 +48,22 @@ int main(){
         cin>>operacao;
 
         switch (operacao){
-            case 1:{
+            case 1:{//chama a função insert de 1000 sensores
                 inserir1000(tabelaHash);
                 break;
             }
-            case 2:{
+            case 2:{//chama a função exibirTabelaHash mostrando todos os sensores que não tem id -1 ou -11
                 tabelaHash.exibirTabelaHash();
                 break;
             }
-            case 3:{
+            case 3:{//recebe o id do sensor que deseja que seja deletado
                 int idDel;
                 cout<<"Digite o id que deseja deletar: ";
                 cin>>idDel;
                 tabelaHash.deletar(idDel);
                 break;
             }
-            case 4:{
+            case 4:{//recebe o id do sensor que deseja que seja pesquisado e calcula o tempo que demora para ser feito a pesquisa
                 int idSearch;
                 cout<<"Digite o id para pesquisar: ";
                 cin>>idSearch;
@@ -74,7 +75,7 @@ int main(){
                 cout<<"Tempo de pesquisa(sec): "<<duracao.count()<<endl;
                 break;
             }
-            case 5:{
+            case 5:{//recebe o id, tipo e localização do sensor que deseja que seja inserido e calcula o tempo que demora para ser feito a inserção
                 int idIns;
                 string tipoIns, localizacaoIns;
                 cout<<"Digite o id, o tipo e a localização do sensor: ";
@@ -83,7 +84,7 @@ int main(){
                 tabelaHash.insert(sensorNovo);
                 break;
             }
-            case 6:{
+            case 6:{//recebe o id e o valor da ultima leitura com base no input do usuário
                 int idAtu;
                 float atualizacao;
                 cout<<"Digite o id do sensor que deseja atualizar e o valor medido(float): ";
@@ -91,7 +92,7 @@ int main(){
                 tabelaHash.atualizarInfo(idAtu, atualizacao);
                 break;
             }
-            default:{
+            default:{//qualquer outro valor diferente de 1 a 6 cancela a operação
                 rodar = false;
                 break;
             }

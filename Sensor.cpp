@@ -10,6 +10,7 @@ Sensor::Sensor(int id, string tipo, string localizacao, float ultimaLeitura ){
     this->ultimaLeitura = 0;
 }
 
+//getters
 int Sensor::get_id(){
     return id;
 }
@@ -23,6 +24,7 @@ float Sensor::get_ultimaLeitura(){
     return ultimaLeitura;
 }
 
+//setters
 void Sensor::set_id(int id){
     this->id = id;
 }
@@ -36,6 +38,7 @@ void Sensor::set_ultimaLeitura(float ultimaLeitura){
     this->ultimaLeitura = ultimaLeitura;
 }
 
+//exibir mostra as informações do sensor
 void Sensor::exibir(){
 
     cout<<"========\n id: " << get_id()<<endl;

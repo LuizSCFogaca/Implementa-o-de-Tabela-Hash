@@ -6,7 +6,7 @@ using namespace std;
 
 class Sensor{
     private:
-        int id = -1;
+        int id;
         string tipo;
         string localizacao;
         float ultimaLeitura;
